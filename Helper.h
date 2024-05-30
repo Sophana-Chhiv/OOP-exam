@@ -20,10 +20,10 @@ public:
     }
     static double calculateDistance(tuple<int, int> coords1, std::tuple<int, int> coords2)
     {
-        int x1, y1, x2, y2;
-        std::tie(x1, y1) = coords1;
-        std::tie(x2, y2) = coords2;
-        return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+        int dx = get<0>(coords1) - get<0>(coords2);
+        int dy = get<1>(coords1) - get<1>(coords2);
+        double distance = sqrt(dx * dx + dy * dy);
+        return distance;
     }
 };
 
