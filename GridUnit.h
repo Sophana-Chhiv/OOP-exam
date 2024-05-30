@@ -26,7 +26,7 @@ public:
     }
 
     void setEntity(char entity) {
-        entity = entity;
+        this->entity = entity;
     }
 
 };
