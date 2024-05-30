@@ -15,14 +15,15 @@ public:
 
     ~Obstacle() {}
 
-    bool isActive() {
+    bool isActive() const {
         return active;
     }
 
-void apply(GridUnit& unit) {
-    if (active) {
-        unit.setEntity('O');
-        active = false;
+    void apply(GridUnit& unit) {
+        if (active) {
+            unit.setEntity('O');
+            active = false;
+        }
     }
 }
 
