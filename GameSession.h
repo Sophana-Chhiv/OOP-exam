@@ -34,14 +34,14 @@ public:
 
         // Create avatars
         for (int i = 0; i < numAvatars; ++i) {
-            auto [x, y] = Helper::generateRandomCoordinates(gridWidth, gridHeight);
-            grid.push_back(new Avatar(x, y));
+            auto coord = Helper::generateRandomCoordinates(gridWidth, gridHeight);
+            grid.push_back(new Avatar(std::get<0>(coord), std::get<1>(coord)));
         }
 
         // Create obstacles
         for (int i = 0; i < numObstacles; ++i) {
-            auto [x, y] = Helper::generateRandomCoordinates(gridWidth, gridHeight);
-            grid.push_back(new Obstacle(x, y));
+            auto coord = Helper::generateRandomCoordinates(gridWidth, gridHeight);
+            grid.push_back(new Obstacle(std::get<0>(coord), std::get<1>(coord)));
         }
     }
 
